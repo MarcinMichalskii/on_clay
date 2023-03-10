@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:intl/intl.dart';
+import 'package:on_clay/API/time_helper.dart';
 import 'package:on_clay/UI/colors.dart';
 
 class SelectDateButton extends HookWidget {
@@ -18,7 +19,7 @@ class SelectDateButton extends HookWidget {
     final onPress = useCallback(() async {
       final value = await showDatePicker(
           context: context,
-          initialDate: dateText,
+          initialDate: TimeHelper.getNewerDate(dateText, DateTime.now()),
           firstDate: DateTime.now(),
           lastDate: DateTime.now().add(const Duration(days: 14)));
 
@@ -58,7 +59,8 @@ class FormButtonUI extends StatelessWidget {
         if (hasHeader) FormContainerHeader(headerText: headerText),
         DecoratedBox(
           decoration: BoxDecoration(
-              color: Colors.blue, borderRadius: BorderRadius.circular(5)),
+              color: CustomColors.darkBlue,
+              borderRadius: BorderRadius.circular(5)),
           child: _FormButtonContent(
               dateText: title,
               onPress: onPress,
@@ -99,7 +101,7 @@ class _FormButtonContent extends StatelessWidget {
               Container(margin: const EdgeInsets.only(left: 8), child: icon),
               Flexible(
                 child: Container(
-                    padding: const EdgeInsets.fromLTRB(8, 16, 16, 16),
+                    padding: const EdgeInsets.all(10),
                     child: Text(dateText,
                         style: TextStyle(color: textColor, fontSize: 15))),
               )

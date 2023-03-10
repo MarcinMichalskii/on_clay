@@ -10,10 +10,14 @@ class ReservationsHelper {
     String rangeEndHour = times[1];
     DateTime rangeStart = TimeHelper().createTimeFromString(rangeStartHour);
     DateTime rangeEnd = TimeHelper().createTimeFromString(rangeEndHour);
-    DateTime earliestStart = TimeHelper()
-        .createTimeFromString('${startTime.hour}:${startTime.minute}');
-    DateTime latestEnd = TimeHelper().createTimeFromString(
-        '${endTime?.hour ?? 23}:${endTime?.minute ?? 59}');
+    String formattedEarliestStart =
+        '${startTime.hour.toString().padLeft(2, '0')}:${startTime.minute.toString().padLeft(2, '0')}';
+    DateTime earliestStart =
+        TimeHelper().createTimeFromString(formattedEarliestStart);
+    String latestEndHour = endTime?.hour.toString().padLeft(2, '0') ?? '23';
+    String latestEndMinute = endTime?.minute.toString().padLeft(2, '0') ?? '59';
+    DateTime latestEnd =
+        TimeHelper().createTimeFromString('$latestEndHour:$latestEndMinute');
 
     if (rangeStart.difference(rangeEnd).inMinutes.abs() < 60) {
       return false;

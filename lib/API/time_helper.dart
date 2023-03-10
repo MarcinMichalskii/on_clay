@@ -25,4 +25,12 @@ class TimeHelper {
     final firstTime = DateTime.parse("2000-01-01 $timeString");
     return firstTime;
   }
+
+  static DateTime getNewerDate(DateTime date1, DateTime date2) {
+    if (date1.isAfter(date2)) {
+      return date1;
+    } else {
+      return date2;
+    }
+  }
 }

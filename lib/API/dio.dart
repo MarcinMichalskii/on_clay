@@ -7,6 +7,15 @@ import 'package:on_clay/API/time_helper.dart';
 final Dio proxyDio = Dio();
 
 class API {
+  Future<void> setupHeaders() async {
+    proxyDio.options.headers = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET,PUT,PATCH,POST,DELETE',
+      'Access-Control-Allow-Headers':
+          'Origin, X-Requested-With, Content-Type, Accept',
+    };
+  }
+
   Future<void> setupProxy(Dio proxyDio) async {
     try {
       String proxy = 'localhost:9090';
