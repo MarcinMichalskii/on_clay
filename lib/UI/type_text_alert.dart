@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:on_clay/clubs_groups.dart';
+import 'package:on_clay/Models/clubs_groups.dart';
 
 class TypeTextAlert extends HookWidget {
   const TypeTextAlert(

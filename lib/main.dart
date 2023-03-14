@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:on_clay/API/court_schedule_data.dart';
+import 'package:on_clay/Models/court_schedule_data.dart';
 import 'package:on_clay/API/dio.dart';
 import 'package:on_clay/UI/colors.dart';
 import 'package:on_clay/UI/main_body.dart';
 import 'package:on_clay/clubs_data.dart';
-import 'package:on_clay/clubs_groups.dart';
+import 'package:on_clay/Models/clubs_groups.dart';
 import 'package:on_clay/clubs_helper.dart';
 import 'package:on_clay/utils/storage_helper.dart';
 import 'package:material_color_gen/material_color_gen.dart';

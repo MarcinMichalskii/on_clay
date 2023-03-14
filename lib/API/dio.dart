@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:on_clay/API/APIParser.dart';
-import 'package:on_clay/API/calendar_data.dart';
+import 'package:on_clay/Models/calendar_data.dart';
 import 'package:on_clay/API/time_helper.dart';
 
 final Dio proxyDio = Dio();

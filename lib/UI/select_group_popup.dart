@@ -6,7 +6,7 @@ import 'package:on_clay/UI/multi_select_picker.dart';
 import 'package:on_clay/UI/select_group.dart';
 import 'package:on_clay/UI/type_text_alert.dart';
 import 'package:on_clay/clubs_data.dart';
-import 'package:on_clay/clubs_groups.dart';
+import 'package:on_clay/Models/clubs_groups.dart';
 import 'package:on_clay/utils/touchable_opacity.dart';
 import 'package:collection/collection.dart';
 

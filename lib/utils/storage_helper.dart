@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'package:on_clay/API/court_schedule_data.dart';
-import 'package:on_clay/clubs_groups.dart';
+import 'package:on_clay/Models/court_schedule_data.dart';
+import 'package:on_clay/Models/clubs_groups.dart';
 import 'package:on_clay/schedule_helper.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

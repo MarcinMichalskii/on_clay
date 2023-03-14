@@ -1,6 +1,6 @@
-import 'package:on_clay/API/court_schedule_data.dart';
+import 'package:on_clay/Models/court_schedule_data.dart';
 import 'package:on_clay/schedule_helper.dart';
-import 'package:on_clay/utils/date_time_extensions.dart';
+import 'package:on_clay/utils/extensions/date_time_extensions.dart';
 
 class SyncHelper {
   static bool shouldSynchornizeFor(String clubName, DateTime selectedDate,

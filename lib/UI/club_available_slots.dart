@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:loading_indicator/loading_indicator.dart';
-import 'package:on_clay/API/court_schedule_data.dart';
+import 'package:on_clay/Models/court_schedule_data.dart';
 import 'package:on_clay/API/dio.dart';
 import 'package:on_clay/UI/colors.dart';
 import 'package:on_clay/clubs_data.dart';

@@ -1,7 +1,7 @@
 import 'package:html/dom.dart' as htmlTree;
 import 'package:html/parser.dart' show parse;
-import 'package:on_clay/API/court_schedule_data.dart';
-import 'package:on_clay/API/html_element_helper.dart';
+import 'package:on_clay/Models/court_schedule_data.dart';
+import 'package:on_clay/utils/htmlParser/html_element_helper.dart';
 import 'package:on_clay/API/time_helper.dart';
 
 extension GroupAvailableHours on CourtScheduleData {
