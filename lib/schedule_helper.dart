@@ -2,7 +2,7 @@ import 'package:html/dom.dart' as htmlTree;
 import 'package:html/parser.dart' show parse;
 import 'package:on_clay/Models/court_schedule_data.dart';
 import 'package:on_clay/utils/htmlParser/html_element_helper.dart';
-import 'package:on_clay/API/time_helper.dart';
+import 'package:on_clay/utils/time_helper.dart';
 
 extension GroupAvailableHours on CourtScheduleData {
   List<String> mergeTimeBlocks() {
@@ -58,8 +58,8 @@ class ScheduleHelper {
     return [];
   }
 
-  static List<CourtScheduleData> handleSchedule(String htmlData,
-      String clubName, String clubPath, DateTime scheduleForDay) {
+  static List<CourtScheduleData> handleSchedule(
+      String htmlData, DateTime scheduleForDay) {
     final syncTime = DateTime.now();
     var document = parse(htmlData);
     final scheudles = document.getElementsByClassName("schedule");
@@ -81,8 +81,8 @@ class ScheduleHelper {
       columns.removeAt(0);
 
       columns.forEach((element) {
-        final courtData = extractAvailableHoursFromColumn(element,
-            [...hourBoxes], syncTime, clubName, clubPath, scheduleForDay);
+        final courtData = extractAvailableHoursFromColumn(
+            element, [...hourBoxes], syncTime, scheduleForDay);
         clubData.add(courtData);
       });
     });
@@ -93,8 +93,6 @@ class ScheduleHelper {
       htmlTree.Element column,
       List<String> hourBoxes,
       DateTime syncTime,
-      String clubName,
-      String clubPath,
       DateTime day) {
     final availableHours = hourBoxes;
     final timeSpan =
@@ -133,9 +131,6 @@ class ScheduleHelper {
       }
     });
     return CourtScheduleData(
-        clubName: clubName,
-        clubPath: clubPath,
-        scheduleForDay: day,
         syncTime: syncTime,
         courtName: courtName,
         availableHours: availableHours,

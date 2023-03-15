@@ -2,7 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:dio/io.dart';
 import 'package:on_clay/API/APIParser.dart';
 import 'package:on_clay/Models/calendar_data.dart';
-import 'package:on_clay/API/time_helper.dart';
+import 'package:on_clay/utils/time_helper.dart';
 
 final Dio proxyDio = Dio();
 
@@ -67,10 +67,10 @@ class API {
     }
   }
 
-  Future<String> getCalendar(DateTime date, String clubName) async {
+  Future<String> getCalendar(DateTime date, String clubPath) async {
     try {
       final formattedDate = TimeHelper().dateFormattedForAPI(date);
-      final getCalendarBody = {'date': formattedDate, 'club_url': clubName};
+      final getCalendarBody = {'date': formattedDate, 'club_url': clubPath};
       FormData calendarFormData = FormData.fromMap(getCalendarBody);
       final calendarResponse = await proxyDio.post(
         'https://www.twojtenis.pl/ajax.php?load=courts_list',

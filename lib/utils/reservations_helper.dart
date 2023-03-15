@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:on_clay/API/time_helper.dart';
+import 'package:on_clay/utils/time_helper.dart';
 
 class ReservationsHelper {
   static bool isReservationPossible(String timeRange, TimeOfDay startTime,

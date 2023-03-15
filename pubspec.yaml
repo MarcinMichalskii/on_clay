@@ -44,6 +44,9 @@ dependencies:
   url_launcher: ^6.1.10
   material_color_gen: ^2.0.0
   multi_select_flutter: ^4.1.2
+  flutter_riverpod: 2.0.0-dev.9
+  hooks_riverpod: 2.0.0-dev.9
+  copy_with_extension: ^4.0.4
 
 dev_dependencies:
   flutter_test:
@@ -60,6 +63,7 @@ dev_dependencies:
   html: ^0.15.1
   intl: ^0.18.0
   flutter_hooks: ^0.18.5+1
+  copy_with_extension_gen: ^4.0.4
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
